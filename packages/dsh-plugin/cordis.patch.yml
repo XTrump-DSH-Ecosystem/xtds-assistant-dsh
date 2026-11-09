@@ -1,0 +1,4 @@
+# DSH bundle patch: inserts the XTDS assistant control panel.
+- insert:
+    - id: xtds-assistant-dsh
+      name: xtds-assistant-dsh

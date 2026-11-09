@@ -1,0 +1,17 @@
+{
+  "host": "127.0.0.1",
+  "port": 9787,
+  "runtimeDir": "%LOCALAPPDATA%\\DSH\\runtime",
+  "worktreeRoot": "E:\\workspace\\.code-worktrees",
+  "dshSessionsDir": "%USERPROFILE%\\.dsh\\storages\\session_projcache\\sessions",
+  "dshWorkspaceRoot": "%USERPROFILE%\\Documents\\deepseek-harness",
+  "workspaceRoots": [],
+  "dshCommand": "E:\\DeepseekHarness\\resources\\runtime\\cli\\bin\\dsh.cmd",
+  "taskTimeoutMs": 1200000,
+  "repos": {
+    "ds-memory": "E:\\workspace\\ds-memory",
+    "qq-gateway": "E:\\workspace\\qq-gateway",
+    "xtds": "E:\\workspace\\xtds-boot-suite",
+    "xtds-assistant-dsh": "E:\\workspace\\xtds-assistant-dsh"
+  }
+}

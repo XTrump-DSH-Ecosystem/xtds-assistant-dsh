@@ -1,0 +1,77 @@
+{
+  "host": "127.0.0.1",
+  "port": 986,
+  "runtimeDir": "..\\runtime",
+  "serviceRuntimeDir": "C:\\Users\\demo\\AppData\\Local\\DSH\\runtime",
+  "taskName": "XTDS-Assistant",
+  "autostartBackend": "registry",
+  "startServicesOnBoot": false,
+  "readinessTimeoutMs": 20000,
+  "stopTimeoutMs": 8000,
+  "healthIntervalMs": 5000,
+  "healthTimeoutMs": 1500,
+  "logMaxBytes": 5242880,
+  "logMaxFiles": 5,
+  "nodePath": "C:\\Program Files\\nodejs\\node.exe",
+  "processes": [
+    {
+      "id": "ds-memory",
+      "label": "ds-memory",
+      "cwd": "E:\\workspace\\ds-memory",
+      "command": "C:\\Program Files\\nodejs\\node.exe",
+      "args": [
+        "src/main.ts",
+        "--serve"
+      ],
+      "endpointFile": "C:\\Users\\demo\\AppData\\Local\\DSH\\runtime\\ds-memory.endpoint.json",
+      "host": "127.0.0.1",
+      "preferredPort": 985,
+      "healthPath": "/health"
+    },
+    {
+      "id": "qq-gateway",
+      "label": "qq-gateway",
+      "cwd": "E:\\workspace\\qq-gateway",
+      "command": "C:\\Program Files\\nodejs\\node.exe",
+      "args": [
+        "src/main.ts"
+      ],
+      "envFile": "qq-gateway.env",
+      "endpointFile": "C:\\Users\\demo\\AppData\\Local\\DSH\\runtime\\qq-gateway.endpoint.json",
+      "host": "127.0.0.1",
+      "preferredPort": 803,
+      "healthPath": "/health",
+      "healthRequireOnline": true,
+      "dependsOn": "ds-memory"
+    },
+    {
+      "id": "open-websearch",
+      "label": "open-websearch",
+      "cwd": "E:\\workspace\\xtds-assistant-dsh",
+      "command": "C:\\Program Files\\nodejs\\node.exe",
+      "args": [
+        "packages/open-websearch/bin/launcher.js"
+      ],
+      "endpointFile": "C:\\Users\\demo\\AppData\\Local\\DSH\\runtime\\open-websearch.endpoint.json",
+      "host": "127.0.0.1",
+      "preferredPort": 0,
+      "healthPath": "/status",
+      "endpointPid": "any"
+    },
+    {
+      "id": "code-bridge",
+      "label": "code-bridge",
+      "cwd": "E:\\workspace\\xtds-assistant-dsh",
+      "command": "C:\\Program Files\\nodejs\\node.exe",
+      "args": [
+        "packages/code-bridge/bin/code-bridge.js",
+        "--config",
+        "E:\\workspace\\xtds-assistant-dsh\\config\\code-bridge.json"
+      ],
+      "endpointFile": "E:\\workspace\\xtds-assistant-dsh\\runtime\\code-bridge\\code-bridge.endpoint.json",
+      "host": "127.0.0.1",
+      "preferredPort": 9787,
+      "healthPath": "/health"
+    }
+  ]
+}

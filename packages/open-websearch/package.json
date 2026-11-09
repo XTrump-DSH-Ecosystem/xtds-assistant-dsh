@@ -1,0 +1,19 @@
+{
+  "name": "xtds-open-websearch-launcher",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Standalone launcher for open-websearch 2.2.0 with dynamic port discovery and endpoint publication",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/launcher.js",
+  "bin": {
+    "xtds-open-websearch-launcher": "bin/launcher.js"
+  },
+  "scripts": {
+    "start": "node bin/launcher.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

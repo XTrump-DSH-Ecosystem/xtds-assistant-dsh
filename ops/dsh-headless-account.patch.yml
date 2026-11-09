@@ -1,0 +1,24 @@
+# Desired content for %USERPROFILE%\.dsh\profiles\headless\cordis.patch.yml.
+# It lets DSH CLI reuse the DSH Desktop account grant instead of requiring
+# DEEPSEEK_API_KEY in the code-bridge child environment.
+#
+# Back up the live file before applying:
+#   Copy-Item "$env:USERPROFILE\.dsh\profiles\headless\cordis.patch.yml" `
+#     "$env:USERPROFILE\.dsh\profiles\headless\cordis.patch.yml.bak-xtds-code-bridge"
+- id: agent-default-model
+  name: "@deepseek-ai/dsh-agent-default-model"
+  config:
+    provider: deepseek-account
+    model: deepseek-flash
+    reasoningEffort: low
+- id: authorization
+  name: "@deepseek-ai/dsh-authorization"
+  disabled: false
+- id: deepseek-account
+  name: "@deepseek-ai/dsh-deepseek-account-platform"
+  config:
+    desktopPlatform: win32
+  disabled: false
+- id: credentials
+  name: "@deepseek-ai/dsh-credentials-local"
+  disabled: false

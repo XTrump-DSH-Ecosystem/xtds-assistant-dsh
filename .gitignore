@@ -1,0 +1,7 @@
+node_modules/
+runtime/
+dist/
+*.tgz
+packages/*/node_modules/
+config/qq-gateway.env
+

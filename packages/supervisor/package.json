@@ -1,0 +1,19 @@
+{
+  "name": "xtds-assistant-supervisor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Zero-dependency local supervisor for the XTDS assistant background services",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/supervisor.js",
+  "bin": {
+    "xtds-supervisor": "bin/supervisor.js"
+  },
+  "scripts": {
+    "start": "node bin/supervisor.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "host": "127.0.0.1",
+  "port": 9787,
+  "runtimeDir": "E:\\workspace\\xtds-assistant-dsh\\runtime\\code-bridge",
+  "worktreeRoot": "E:\\workspace\\.code-worktrees",
+  "dshCommand": "E:\\DeepseekHarness\\resources\\runtime\\cli\\bin\\dsh.cmd",
+  "taskTimeoutMs": 1200000,
+  "repos": {
+    "ds-memory": "E:\\workspace\\ds-memory",
+    "martilyric": "C:\\Users\\demo\\Desktop\\Martilyric",
+    "qq-gateway": "E:\\workspace\\qq-gateway",
+    "xtds": "E:\\workspace\\xtds-boot-suite",
+    "xtds-assistant-dsh": "E:\\workspace\\xtds-assistant-dsh"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "xtds-assistant-dsh",
+  "version": "0.1.0",
+  "private": true,
+  "description": "XTDS assistant background supervisor and DSH control-panel plugin",
+  "license": "MIT",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "npm run test:supervisor && npm run test:plugin && npm run test:open-websearch && npm run test:code-bridge",
+    "test:supervisor": "npm --prefix packages/supervisor test",
+    "test:plugin": "npm --prefix packages/dsh-plugin test",
+    "test:open-websearch": "npm --prefix packages/open-websearch test",
+    "test:code-bridge": "npm --prefix packages/code-bridge test",
+    "check": "node scripts/check-syntax.js",
+    "ops:soak": "node ops/soak-monitor.mjs",
+    "ops:soak:once": "node ops/soak-monitor.mjs --once",
+    "ops:backup": "node ops/backup-state.mjs",
+    "pack:plugin": "node scripts/pack-plugin.js"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
